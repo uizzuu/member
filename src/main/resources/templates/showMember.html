@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <style>
+        table{
+        border-collapse: collapse;
+        }
+    </style>
+</head>
+<body align="center">
+    <h2>멤버리스트 보기</h2>
+    <table border="1" align="center">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>이름</th>
+            <th>나이</th>
+            <th>주소</th>
+            <th>수정</th>
+            <th>삭제</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>ID</td>
+            <td>이름</td>
+            <td>나이</td>
+            <td>주소</td>
+            <td>
+                <form>
+                    <input type="submit" value="수정">
+                </form>
+            </td>
+            <td>
+                <form>
+                    <input type="submit" value="삭제">
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br/>
+    <form>
+        <input type="submit" value="신규멤버입력">
+    </form>
+</body>
+</html>
