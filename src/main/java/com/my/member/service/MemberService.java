@@ -43,14 +43,22 @@ public class MemberService {
 
     public void insertMember(MemberDto dto) {
         // 3. 서비스에서 DTO를 엔티티로 변환
-        Member member = new Member();
-        member.setName(dto.getName());
-        member.setAge(dto.getAge());
-        member.setAddress(dto.getAddress());
+//        Member member = new Member();
+//        member.setName(dto.getName());
+//        member.setAge(dto.getAge());
+//        member.setAddress(dto.getAddress());
+
+        // 우리가 만든 toDto를 이용해서 member 엔티티 생성하기
+        Member member = MemberDto.toDto(dto);
 
         // 4. 리포지토리를 이용해 저장
         member = repository.save(member);
         System.out.println("====================================");
         System.out.println(member);
+    }
+
+    public void deleteMember(Long id) {
+        // 삭제 처리 (리포지토리)
+        repository.deleteById(id);
     }
 }

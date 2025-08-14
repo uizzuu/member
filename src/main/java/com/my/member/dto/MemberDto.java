@@ -23,4 +23,14 @@ public class MemberDto {
                 member.getAddress()
         );
     }
+
+    // DTO를 받아서 Entity에 넣는 작업
+    public static Member toDto(MemberDto dto) {
+        Member member = new Member();
+        member.setId(dto.getId());
+        member.setName(dto.getName());
+        member.setAge(dto.getAge());
+        member.setAddress(dto.getAddress());
+        return member;
+    }
 }
