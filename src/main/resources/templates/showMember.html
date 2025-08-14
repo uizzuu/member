@@ -33,8 +33,9 @@
             <td th:text="*{age}">나이</td>
             <td th:text="*{address}">주소</td>
             <td>
-                <form>
+                <form th:action="@{/member/updateView}" method="get">
                     <input type="submit" value="수정">
+                    <input type="hidden" name="updateId" th:value="*{id}">
                 </form>
             </td>
             <td>
