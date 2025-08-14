@@ -7,6 +7,10 @@
         table{
         border-collapse: collapse;
         }
+
+        a{
+        color: #000;
+        }
     </style>
 </head>
 <body align="center">
@@ -42,8 +46,8 @@
         </tbody>
     </table>
     <br/>
-    <form>
-        <input type="submit" value="신규멤버입력">
+    <form th:action="@{/member/insertForm}"  method="get">
+        <input type="submit"  value="신규멤버입력">
     </form>
 </body>
 </html>

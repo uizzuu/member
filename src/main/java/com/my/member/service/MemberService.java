@@ -40,4 +40,17 @@ public class MemberService {
                 .toList();
         // return dtoList;
     }
+
+    public void insertMember(MemberDto dto) {
+        // 3. 서비스에서 DTO를 엔티티로 변환
+        Member member = new Member();
+        member.setName(dto.getName());
+        member.setAge(dto.getAge());
+        member.setAddress(dto.getAddress());
+
+        // 4. 리포지토리를 이용해 저장
+        member = repository.save(member);
+        System.out.println("====================================");
+        System.out.println(member);
+    }
 }
